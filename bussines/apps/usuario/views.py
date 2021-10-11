@@ -22,5 +22,4 @@ class UserAPI(APIView):
     def get(self, request, format=None):
         lista = User.objects.all()
         response = self.serializer(lista, many=True)
-
         return HttpResponse(json.dumps(response.data), content_type='application/json')

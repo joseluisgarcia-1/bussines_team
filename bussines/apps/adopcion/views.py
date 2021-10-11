@@ -47,7 +47,7 @@ class SolicitudUpdate(UpdateView):
     template_name = 'adopcion/solicitud_form.html'
     form_class = SolicitudForm
     second_form_class = PersonaForm
-    success_url = reverse_lazy('solicitud_listar')
+    success_url = reverse_lazy('solicitud:solicitud_listar')
 
     def get_context_data(self, **kwargs):
         context = super(SolicitudUpdate, self).get_context_data(**kwargs)
@@ -78,5 +78,5 @@ class SolicitudUpdate(UpdateView):
 class SolicitudDelete(DeleteView):
     model = Solicitud
     template_name = 'adopcion/solicitud_delete.html'
-    success_url = reverse_lazy('solicitud_listar')
+    success_url = reverse_lazy('solicitud:solicitud_listar')
 
