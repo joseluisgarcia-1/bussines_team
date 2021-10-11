@@ -9,3 +9,10 @@ class Persona(models.Model):
     email = models.EmailField()
     domicilio = models.TextField()
     
+    def __str__(self):
+        return '{} {}'.format(self.nombre, self.apellidos)
+
+class Solicitud(models.Model):
+    persona = models.ForeignKey(Persona, null = True, blank = True, on_delete=models.CASCADE)
+    numero_mascotas = models.IntegerField()
+    razones = models.TextField()
